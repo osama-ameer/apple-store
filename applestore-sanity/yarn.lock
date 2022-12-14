@@ -1386,7 +1386,7 @@
     "get-random-values-esm" "^1.0.0"
     "lodash" "^4.17.21"
 
-"@sanity/cli@3.0.6":
+"@sanity/cli@^3.0.6", "@sanity/cli@3.0.6":
   "integrity" "sha512-E4t185XgATiPSR/vay6jtRxQytUwRZIcv0+6qTouN4XQq1YvR7PxFRJhz6wE8V4+ofEByFWSGqsrcY+OV+R6Jg=="
   "resolved" "https://registry.npmjs.org/@sanity/cli/-/cli-3.0.6.tgz"
   "version" "3.0.6"
