@@ -17,13 +17,19 @@ npx create-next-app --example with-tailwindcss your-app-name
   - create new project
   - Then run command
   ```bash
-  npm install -g @sanity/cli && sanity init
+  sanity init
   ```
   - Select template for pre defined schemas and then make ammendmants according to your requirments
+  - 
 - Add this code into you root schema file in sanity to add users and account to your sanity studio with next auth
+
+  ```bash
   import { user, account } from "next-auth-sanity/schemas";
   export const schemaTypes = [  blockContent, product, category , user, account]
+  ```
+  
  - To build and deploy your sanity project navigate to your sanity directory and run this commands
+ - 
  ```bash
  sanity build
  ```
@@ -32,17 +38,17 @@ npx create-next-app --example with-tailwindcss your-app-name
  ```
  
 ### .env.local
-NEXT_PUBLIC_BASE_URL = http://localhost:3000/
-NEXT_PUBLIC_SANITY_DATASET = production 
-NEXT_PUBLIC_SANITY_PROJECT_ID = 755u8o2l
-SANITY_API_TOKEN = 
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = 
-STRIPE_SECRET_KEY = 
-STRIPE_SIGNING_SECRET = 
-GOOGLE_CLIENT_ID = 
-GOOGLE_CLIENT_SECRET = 
-NEXTAUTH_URL = http://localhost:3000/
-NEXTAUTH_SECRET = ffe20cef7eda4a136284bc1be9c7b639
+- NEXT_PUBLIC_BASE_URL = http://localhost:3000/
+- NEXT_PUBLIC_SANITY_DATASET = production 
+- NEXT_PUBLIC_SANITY_PROJECT_ID = 755u8o2l
+- SANITY_API_TOKEN = 
+- NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = 
+- STRIPE_SECRET_KEY = 
+- STRIPE_SIGNING_SECRET = 
+- GOOGLE_CLIENT_ID = 
+- GOOGLE_CLIENT_SECRET = 
+- NEXTAUTH_URL = http://localhost:3000/
+- NEXTAUTH_SECRET = ffe20cef7eda4a136284bc1be9c7b639
 
 - Set the origin in your sanity studio and google cloud console 
 
