@@ -50,7 +50,7 @@ npx create-next-app --example with-tailwindcss your-app-name
 - NEXTAUTH_URL = http://localhost:3000/
 - NEXTAUTH_SECRET = ffe20cef7eda4a136284bc1be9c7b639
 
-- Set the origin in your sanity studio and google cloud console 
+Set the origin in your sanity studio and google cloud console 
 
 ### Deploy Next App to Netlify
 - Import Repo from GitHub
