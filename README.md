@@ -1,27 +1,54 @@
-# Next.js + Tailwind CSS Example
+## Apple Store - NextJS, TypeScript, Sanity.io, Stripe API, Redux Toolkit, Tailwind CSS, SSR 
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+### Deployment
+  - https://applestore-project.netlify.app/
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+### Initialize Next app with tailwind CSS by executing the following commnad
+``` bash
+npx create-next-app --example with-tailwindcss your-app-name
 ```
+### Sanity.io
+- Sanity.io is a CMS which is used as a Admin Panel to manipulate your website products.
+- First install sanity cli
+  ```bash
+  npm install -g @sanity/cli
+  ```
+- Login in sanity 
+  - create new project
+  - Then run command
+  ```bash
+  npm install -g @sanity/cli && sanity init
+  ```
+  - Select template for pre defined schemas and then make ammendmants according to your requirments
+- Add this code into you root schema file in sanity to add users and account to your sanity studio with next auth
+  import { user, account } from "next-auth-sanity/schemas";
+  export const schemaTypes = [  blockContent, product, category , user, account]
+ - To build and deploy your sanity project navigate to your sanity directory and run this commands
+ ```bash
+ sanity build
+ ```
+ ```bash
+ sanity deploy
+ ```
+ 
+### .env.local
+NEXT_PUBLIC_BASE_URL = http://localhost:3000/
+NEXT_PUBLIC_SANITY_DATASET = production 
+NEXT_PUBLIC_SANITY_PROJECT_ID = 755u8o2l
+SANITY_API_TOKEN = 
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = 
+STRIPE_SECRET_KEY = 
+STRIPE_SIGNING_SECRET = 
+GOOGLE_CLIENT_ID = 
+GOOGLE_CLIENT_SECRET = 
+NEXTAUTH_URL = http://localhost:3000/
+NEXTAUTH_SECRET = ffe20cef7eda4a136284bc1be9c7b639
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+- Set the origin in your sanity studio and google cloud console 
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+### Deploy Next App to Netlify
+- Import Repo from GitHub
+- set all env variables
+- deploy !
+ 
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
